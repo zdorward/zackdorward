@@ -2,12 +2,13 @@
     <div class="container">test</div>
 </template>
 
-<script setup lang="ts">
-const a = 1
+<script setup lang="ts"></script>
 
-const b = () => {
-    return 1
+<style scopeds>
+.container {
+    border: solid 1px black;
+    padding: 0 6px;
+    border-radius: 3px;
+    width: min-content;
 }
-</script>
-
-<style scoped></style>
+</style>
