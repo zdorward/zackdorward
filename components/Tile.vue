@@ -4,7 +4,7 @@
 
 <script setup lang="ts"></script>
 
-<style scopeds>
+<style scoped>
 .container {
     border: solid 1px black;
     padding: 0 6px;

@@ -1,11 +1,12 @@
 <template>
     <div class="home">
-        <Tile />
+        <Me></Me>
     </div>
 </template>
 
 <style scoped>
 .home {
-    background-color: pink;
+    height: 100vh;
+    background-color: #1a1a1a;
 }
 </style>
