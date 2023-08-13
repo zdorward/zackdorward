@@ -1,14 +1,13 @@
 <template>
+    <NavBar></NavBar>
     <div class="home">
         <Me></Me>
-        <Tile></Tile>
     </div>
 </template>
 
-<script lang="ts"></script>
-<style scoped>
+<script setup lang="ts"></script>
+<style scoped lang="scss">
 .home {
-    padding-top: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,1 +1,0 @@
-<template>school page</template>
