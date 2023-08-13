@@ -8,6 +8,11 @@
         "postinstall": "nuxt prepare"
     },
     "devDependencies": {
+        "@nuxtjs/color-mode": "^3.3.0",
         "nuxt": "^3.0.0"
+    },
+    "dependencies": {
+        "lucide-vue-next": "^0.265.0",
+        "sass": "^1.65.1"
     }
 }

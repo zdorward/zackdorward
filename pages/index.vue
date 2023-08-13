@@ -1,12 +1,16 @@
 <template>
     <div class="home">
         <Me></Me>
+        <Tile></Tile>
     </div>
 </template>
 
+<script lang="ts"></script>
 <style scoped>
 .home {
-    height: 100vh;
-    background-color: #1a1a1a;
+    padding-top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 </style>

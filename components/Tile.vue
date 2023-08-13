@@ -1,14 +1,18 @@
 <template>
-    <div class="container">test</div>
+    <div class="container">hello</div>
 </template>
 
 <script setup lang="ts"></script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '/assets/main';
 .container {
-    border: solid 1px black;
-    padding: 0 6px;
-    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+    border: solid 1px;
+    border-radius: 6px;
     width: min-content;
 }
 </style>

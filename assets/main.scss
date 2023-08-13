@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Narnoor&display=swap');
+
+$font-stack: 'Inter', serif;
+// $primary-color: #ededed;
+// $background-color: #1a1a1a;
+
+.light-mode {
+    --color-primary: #433422;
+    --bg: #f1e7d0;
+}
+.dark-mode {
+    --color-primary: #ededed;
+    --bg: #1a1a1a;
+}
+
+html {
+    font-family: $font-stack;
+    color: var(--color-primary);
+    background-color: var(--bg);
+}
+
+body {
+    margin: 0;
+}
