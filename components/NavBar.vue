@@ -11,6 +11,7 @@
                 @click="toggleColorMode">
                 LIGHT
             </div>
+            <div>TEST</div>
             <!-- <Sun
                 v-if="colorMode.preference === 'dark'"
                 @click="toggleColorMode">
