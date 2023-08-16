@@ -22,6 +22,12 @@ import { Sun, Moon } from 'lucide-vue-next'
 const colorMode = useColorMode()
 colorMode.preference = 'dark'
 
+watch(colorMode, (newColorMode) => {
+    console.log(newColorMode.preference)
+})
+
+console.log(colorMode.preference)
+
 const toggleColorMode = () => {
     if (colorMode.preference === 'light') {
         colorMode.preference = 'dark'
