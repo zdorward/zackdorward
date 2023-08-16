@@ -1,17 +1,17 @@
 <template>
     <div class="me">
-        <div class="card">
-            <img
-                class="headshot"
-                src="../assets/images/portrait.jpg"
-                alt="Picture of me" />
-        </div>
-
-        <div class="text">Hey, it's Zack. Welcome to my website :)</div>
+        <img
+            class="headshot"
+            :src="headshot"
+            alt="Picture of me" />
     </div>
+
+    <div class="text">Hey, it's Zack. Welcome to my website :)</div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import headshot from '../assets/images/headshot.png'
+</script>
 
 <style scoped lang="scss">
 @use '/assets/main';
@@ -21,6 +21,12 @@
     flex-direction: row;
     gap: 5rem;
     align-items: center;
+
+    .headshot {
+        display: block;
+        width: 300px;
+        border-radius: 0.5rem;
+    }
 
     .card {
         background: linear-gradient(-45deg, #7b83eb, #75bdd1, #89a7fa, #9492ff);
@@ -40,11 +46,6 @@
             100% {
                 background-position: 0% 50%;
             }
-        }
-
-        .headshot {
-            display: block;
-            width: 300px;
         }
     }
 
