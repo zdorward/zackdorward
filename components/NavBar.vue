@@ -23,7 +23,9 @@ const colorMode = useColorMode()
 colorMode.preference = 'dark'
 
 watch(colorMode, (newColorMode) => {
-    console.log(newColorMode.preference)
+    if (newColorMode.preference === 'system') {
+        colorMode.preference = 'dark'
+    }
 })
 
 console.log(colorMode.preference)
