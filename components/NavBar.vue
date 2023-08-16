@@ -11,6 +11,7 @@
                 v-if="colorMode.preference === 'light'"
                 @click="toggleColorMode">
             </Moon> -->
+            <Sun></Sun>
         </div>
     </div>
 </template>
