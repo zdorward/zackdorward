@@ -2,16 +2,14 @@
     <div class="me">
         <img
             class="headshot"
-            :src="headshot"
+            src="/headshot.png"
             alt="Picture of me" />
     </div>
 
     <div class="text">Hey, it's Zack. Welcome to my website :)</div>
 </template>
 
-<script setup lang="ts">
-import headshot from '../assets/images/headshot.png'
-</script>
+<script setup lang="ts"></script>
 
 <style scoped lang="scss">
 @use '/assets/main';
