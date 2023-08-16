@@ -19,15 +19,16 @@
 .me {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 5rem;
     align-items: center;
 
     .card {
         background: linear-gradient(-45deg, #7b83eb, #75bdd1, #89a7fa, #9492ff);
         background-size: 400% 400%;
         animation: gradient 8s ease infinite;
-        box-shadow: 0 0 5px var(main.$primary);
-        padding: 20px 40px 0 40px;
+        box-shadow: 0 0 0.25rem var(main.$primary);
+        padding: 1rem 2rem 0 2rem;
+        border-radius: 0.5rem;
 
         @keyframes gradient {
             0% {
@@ -48,7 +49,7 @@
     }
 
     .text {
-        font-size: 24px;
+        font-size: 1rem;
     }
 }
 </style>
