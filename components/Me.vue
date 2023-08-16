@@ -1,10 +1,12 @@
 <template>
     <div class="me">
         <div class="card">
-            <img
-                class="headshot"
-                src="/headshot.png"
-                alt="Picture of me" />
+            <div class="img-container">
+                <img
+                    class="headshot"
+                    src="/headshot.png"
+                    alt="Picture of me" />
+            </div>
         </div>
         <div class="text">Hey, it's Zack. Welcome to my website :)</div>
     </div>
@@ -25,9 +27,10 @@
         background: linear-gradient(-45deg, #7b83eb, #75bdd1, #89a7fa, #9492ff);
         background-size: 400% 400%;
         animation: gradient 8s ease infinite;
-        box-shadow: 0 0 0.25rem var(main.$primary);
-        padding: 1rem 2rem 0 2rem;
-        border-radius: 0.5rem;
+        box-shadow: inset 0 0 0.25rem var(main.$primary);
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
 
         @keyframes gradient {
             0% {
@@ -41,10 +44,17 @@
             }
         }
 
-        .headshot {
-            display: block;
-            width: 300px;
-            border-radius: 0.5rem;
+        .img-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            .headshot {
+                display: flex;
+                width: 100%;
+                object-position: 0% 0%;
+                overflow: hidden;
+            }
         }
     }
 
