@@ -25,8 +25,6 @@ watch(colorMode, (newColorMode) => {
     }
 })
 
-console.log(colorMode.preference)
-
 const toggleColorMode = () => {
     if (colorMode.preference === 'light') {
         colorMode.preference = 'dark'
