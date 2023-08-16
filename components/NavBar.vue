@@ -1,17 +1,14 @@
 <template>
     <div class="nav-bar">
         <div class="toggle-button">
-            <div @click="toggleColorMode">DARK</div>
-            <div @click="toggleColorMode">LIGHT</div>
-            <!-- <Sun
+            <Sun
                 v-if="colorMode.preference === 'dark'"
                 @click="toggleColorMode">
             </Sun>
             <Moon
                 v-if="colorMode.preference === 'light'"
                 @click="toggleColorMode">
-            </Moon> -->
-            <Sun></Sun>
+            </Moon>
         </div>
     </div>
 </template>
