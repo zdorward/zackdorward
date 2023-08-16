@@ -1,14 +1,24 @@
 <template>
     <div class="nav-bar">
         <div class="toggle-button">
-            <Sun
+            <div
+                v-if="colorMode.preference === 'dark'"
+                @click="toggleColorMode">
+                DARK
+            </div>
+            <div
+                v-if="colorMode.preference === 'light'"
+                @click="toggleColorMode">
+                LIGHT
+            </div>
+            <!-- <Sun
                 v-if="colorMode.preference === 'dark'"
                 @click="toggleColorMode">
             </Sun>
             <Moon
                 v-if="colorMode.preference === 'light'"
                 @click="toggleColorMode">
-            </Moon>
+            </Moon> -->
         </div>
     </div>
 </template>
@@ -17,6 +27,7 @@
 import { Sun, Moon } from 'lucide-vue-next'
 
 const colorMode = useColorMode()
+colorMode.preference = 'dark'
 
 const toggleColorMode = () => {
     if (colorMode.preference === 'light') {
