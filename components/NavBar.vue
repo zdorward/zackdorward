@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { Sun, Moon } from '../node_modules/lucide-vue-next'
+import { Sun, Moon } from 'lucide-vue-next'
 
 const colorMode = useColorMode()
 
