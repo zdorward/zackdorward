@@ -3,7 +3,7 @@
         <div class="card">
             <img
                 class="headshot"
-                src="../assets/images/headshot.png"
+                src="../assets/images/portrait.jpg"
                 alt="Picture of me" />
         </div>
 
