@@ -1,17 +1,8 @@
 <template>
     <div class="nav-bar">
         <div class="toggle-button">
-            <div
-                v-if="colorMode.preference === 'dark'"
-                @click="toggleColorMode">
-                DARK
-            </div>
-            <div
-                v-if="colorMode.preference === 'light'"
-                @click="toggleColorMode">
-                LIGHT
-            </div>
-            <div>TEST</div>
+            <div @click="toggleColorMode">DARK</div>
+            <div @click="toggleColorMode">LIGHT</div>
             <!-- <Sun
                 v-if="colorMode.preference === 'dark'"
                 @click="toggleColorMode">
