@@ -1,16 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Narnoor&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Lisu+Bosa&family=Narnoor&display=swap');
 
 .light-mode {
     --primary: #1a1a1a;
+    --primary-light: #1a1a1a25;
     --bg: #ededed;
+    --secondary-bg: #e5e5e5;
 }
 .dark-mode {
     --primary: #ededed;
+    --primary-light: #ededed25;
     --bg: #1a1a1a;
+    --secondary-bg: #141414;
 }
 $primary: --primary;
+$primary-light: --primary-light;
+$secondary-bg: --secondary-bg;
 $bg: --bg;
 $font-stack: 'Inter', serif;
+$h-nav: 69px;
 html {
     font-family: $font-stack;
     color: var($primary);

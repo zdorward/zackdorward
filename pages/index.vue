@@ -1,15 +1,12 @@
 <template>
     <NavBar></NavBar>
-    <div class="home">
-        <Me></Me>
-    </div>
+    <Me></Me>
 </template>
 
 <script setup lang="ts"></script>
 <style scoped lang="scss">
-.home {
+.index {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 </style>

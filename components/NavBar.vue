@@ -1,25 +1,36 @@
 <template>
-    <div class="nav-bar">
-        <div class="toggle-button">
+    <nav class="nav-bar">
+        <div>
             <Sun
-                v-if="colorMode.preference === 'dark'"
-                @click="toggleColorMode"
-                :size="48">
+                v-if="isDarkMode"
+                class="icon"
+                @click="setisDarkMode(!isDarkMode)"
+                :size="32">
             </Sun>
             <Moon
-                v-if="colorMode.preference === 'light'"
-                @click="toggleColorMode"
-                :size="48">
+                v-else
+                class="icon"
+                @click="setisDarkMode(!isDarkMode)"
+                :size="32">
             </Moon>
         </div>
         <div class="options-container">
             <div class="options">
-                <div class="option">Home</div>
-                <div class="option">Education</div>
-                <div class="option">Projects</div>
+                <NuxtLink
+                    class="option"
+                    to="/"
+                    style="text-decoration: none">
+                    Home
+                </NuxtLink>
+                <NuxtLink
+                    class="option"
+                    to="/test"
+                    style="text-decoration: none">
+                    Test
+                </NuxtLink>
             </div>
         </div>
-    </div>
+    </nav>
 </template>
 
 <script setup lang="ts">
@@ -27,32 +38,46 @@ import { Sun, Moon } from 'lucide-vue-next'
 
 const colorMode = useColorMode()
 colorMode.preference = 'dark'
+const isDarkMode = computed(() => colorMode.preference === 'dark')
+const iconColor = computed(() => (isDarkMode.value ? '#f9d71c' : '#909090'))
 
-watch(colorMode, (newColorMode) => {
-    if (newColorMode.preference === 'system') {
+const setisDarkMode = (dark: boolean) => {
+    if (dark) {
         colorMode.preference = 'dark'
-    }
-})
-
-const toggleColorMode = () => {
-    if (colorMode.preference === 'light') {
-        colorMode.preference = 'dark'
-    } else if (colorMode.preference === 'dark') {
+    } else {
         colorMode.preference = 'light'
     }
 }
+
+watch(colorMode, (newColorMode) => {
+    if (newColorMode.preference === 'system') {
+        setisDarkMode(true)
+    }
+})
 </script>
 
 <style scoped lang="scss">
+@use '/assets/main';
+
 .nav-bar {
-    padding: 2rem;
+    background-color: var(main.$secondary-bg);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    .toggle-button {
-        width: min-content;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: solid var(main.$primary-light);
+
+    .icon {
+        cursor: pointer;
+        transition: transform 0.1s;
+        display: block;
+
         &:hover {
-            cursor: pointer;
+            transform: scale(1.25);
+            color: v-bind(iconColor);
         }
     }
 
@@ -65,8 +90,19 @@ const toggleColorMode = () => {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: 2rem;
+            gap: 4rem;
             text-transform: uppercase;
+
+            .option {
+                cursor: pointer;
+                color: inherit;
+                padding: 0.5rem 0;
+
+                &:hover {
+                    color: pink;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
