@@ -4,7 +4,7 @@
             <div class="card">
                 <img
                     class="headshot"
-                    src="/headshot.png"
+                    src="/headshot_cropped.png"
                     alt="Picture of me" />
             </div>
             <div class="text">
