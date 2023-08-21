@@ -3,7 +3,10 @@
         :selected-page="page"
         @update-page="updatePage"></NavBar>
     <Me v-if="page === 'home'"></Me>
-    <Bouldering v-if="page === 'bouldering'"></Bouldering>
+    <Bouldering
+        :style="{
+            display: page === 'bouldering' ? 'flex' : 'none',
+        }"></Bouldering>
 </template>
 
 <script setup lang="ts">
