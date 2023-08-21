@@ -16,18 +16,16 @@
         </div>
         <div class="options-container">
             <div class="options">
-                <NuxtLink
-                    class="option"
-                    to="/"
-                    style="text-decoration: none">
-                    Home
-                </NuxtLink>
-                <NuxtLink
-                    class="option"
-                    to="/test"
-                    style="text-decoration: none">
-                    Test
-                </NuxtLink>
+                <div
+                    v-for="page in pages"
+                    :class="{
+                        option: true,
+                        active: page.value === selectedPage,
+                    }"
+                    style="text-decoration: none"
+                    @click="updatePage(page.value)">
+                    {{ page.label }}
+                </div>
             </div>
         </div>
     </nav>
@@ -36,10 +34,26 @@
 <script setup lang="ts">
 import { Sun, Moon } from 'lucide-vue-next'
 
+defineProps<{
+    selectedPage: string
+}>()
+const emit = defineEmits<{
+    (e: 'updatePage', value: string): void
+}>()
+
 const colorMode = useColorMode()
 colorMode.preference = 'dark'
 const isDarkMode = computed(() => colorMode.preference === 'dark')
 const iconColor = computed(() => (isDarkMode.value ? '#f9d71c' : '#909090'))
+
+type Page = {
+    label: string
+    value: string
+}
+const pages: Page[] = [
+    { value: 'home', label: 'Home' },
+    { value: 'bouldering', label: 'Bouldering' },
+]
 
 const setisDarkMode = (dark: boolean) => {
     if (dark) {
@@ -47,6 +61,10 @@ const setisDarkMode = (dark: boolean) => {
     } else {
         colorMode.preference = 'light'
     }
+}
+
+const updatePage = (page: string) => {
+    emit('updatePage', page)
 }
 
 watch(colorMode, (newColorMode) => {
@@ -69,11 +87,13 @@ watch(colorMode, (newColorMode) => {
     width: 100%;
     overflow: hidden;
     border-bottom: solid var(main.$primary-light);
+    z-index: 10;
 
     .icon {
         cursor: pointer;
         transition: transform 0.1s;
         display: block;
+        padding-left: 1rem;
 
         &:hover {
             transform: scale(1.25);
@@ -99,8 +119,11 @@ watch(colorMode, (newColorMode) => {
                 padding: 0.5rem 0;
 
                 &:hover {
-                    color: pink;
                     font-weight: bold;
+                }
+                &.active {
+                    font-weight: bold;
+                    color: var(main.$accent);
                 }
             }
         }

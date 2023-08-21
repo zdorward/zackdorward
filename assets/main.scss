@@ -5,17 +5,20 @@
     --primary-light: #1a1a1a25;
     --bg: #ededed;
     --secondary-bg: #e5e5e5;
+    --accent: '#1a1a1a ';
 }
 .dark-mode {
     --primary: #ededed;
     --primary-light: #ededed25;
     --bg: #1a1a1a;
     --secondary-bg: #141414;
+    --accent: #9babfd;
 }
 $primary: --primary;
 $primary-light: --primary-light;
 $secondary-bg: --secondary-bg;
 $bg: --bg;
+$accent: --accent;
 $font-stack: 'Inter', serif;
 $h-nav: 69px;
 html {

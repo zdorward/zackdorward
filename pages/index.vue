@@ -1,9 +1,18 @@
 <template>
-    <NavBar></NavBar>
-    <Me></Me>
+    <NavBar
+        :selected-page="page"
+        @update-page="updatePage"></NavBar>
+    <Me v-if="page === 'home'"></Me>
+    <Bouldering v-if="page === 'bouldering'"></Bouldering>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const page = ref('home')
+
+const updatePage = (p: string) => {
+    page.value = p
+}
+</script>
 <style scoped lang="scss">
 .index {
     display: flex;
