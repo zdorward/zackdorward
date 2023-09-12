@@ -81,12 +81,15 @@ const boxShadow = computed(
             font-size: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
             text-decoration: none;
             color: inherit;
             &:hover {
                 color: var(main.$accent);
             }
+            padding: 1rem 1.5rem;
+            border-radius: 2rem;
+            background-color: var(main.$secondary-bg);
             z-index: 5;
         }
     }
