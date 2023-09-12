@@ -93,7 +93,7 @@ const boxShadow = computed(
 @media (max-width: 480px) {
     .me {
         .card {
-            width: 50%;
+            width: 60%;
         }
     }
 }
