@@ -3,8 +3,7 @@
         <!-- @vue-ignore -->
         <NuxtParticles
             id="particles"
-            :options="options"
-            @load="onLoad"></NuxtParticles>
+            :options="options"></NuxtParticles>
         <NavBar :selected-page="'/'"></NavBar>
         <Me></Me>
     </div>
@@ -13,11 +12,11 @@
 <script setup lang="ts">
 import type { Container } from 'tsparticles-engine'
 
-const onLoad = (container: Container) => {
-    // Do something with the container
-    container.pause()
-    setTimeout(() => container.play(), 2000)
-}
+// const onLoad = (container: Container) => {
+//     // Do something with the container
+//     container.pause()
+//     setTimeout(() => container.play(), 100)
+// }
 
 const options = {
     particles: {
@@ -129,5 +128,19 @@ const options = {
 </script>
 <style scoped lang="scss">
 .index {
+    #particles {
+        animation: fadeIn 4s;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.2;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    }
 }
 </style>
