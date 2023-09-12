@@ -105,7 +105,7 @@ watch(colorMode, (newColorMode) => {
             display: flex;
 
             &:hover {
-                transform: scale(1.25);
+                transform: scale(1.15);
                 color: v-bind(iconColor);
             }
         }
@@ -145,7 +145,7 @@ watch(colorMode, (newColorMode) => {
             color: inherit;
             transition: transform 0.2s;
             &:hover {
-                transform: scale(1.25);
+                transform: scale(1.15);
             }
         }
     }
