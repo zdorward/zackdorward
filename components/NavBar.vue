@@ -1,15 +1,15 @@
 <template>
     <nav class="nav-bar">
-        <div>
+        <div class="color-mode">
             <Sun
                 v-if="isDarkMode"
-                class="color-mode"
+                class="color-icon"
                 @click="setisDarkMode(!isDarkMode)"
                 :size="32">
             </Sun>
             <Moon
                 v-else
-                class="color-mode"
+                class="color-icon"
                 @click="setisDarkMode(!isDarkMode)"
                 :size="32">
             </Moon>
@@ -96,16 +96,21 @@ watch(colorMode, (newColorMode) => {
     z-index: 10;
 
     .color-mode {
-        padding-left: 2rem;
-        cursor: pointer;
-        transition: transform 0.1s;
         display: flex;
+        justify-content: center;
+        padding-left: 2rem;
+        .color-icon {
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
 
-        &:hover {
-            transform: scale(1.25);
-            color: v-bind(iconColor);
+            &:hover {
+                transform: scale(1.25);
+                color: v-bind(iconColor);
+            }
         }
     }
+
     .options {
         display: flex;
         flex-direction: row;
@@ -138,8 +143,9 @@ watch(colorMode, (newColorMode) => {
         a {
             text-decoration: none;
             color: inherit;
+            transition: transform 0.2s;
             &:hover {
-                color: var(main.$accent);
+                transform: scale(1.25);
             }
         }
     }

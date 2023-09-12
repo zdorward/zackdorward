@@ -13,7 +13,7 @@
                 href="/ZackDorward_Resume.pdf"
                 download>
                 <Download :size="18"></Download>
-                DOWNLOAD RESUME
+                RESUME
             </a>
         </div>
     </div>
@@ -77,7 +77,7 @@ const boxShadow = computed(
         }
 
         .resume {
-            font-size: 0.75rem;
+            font-size: 1rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
