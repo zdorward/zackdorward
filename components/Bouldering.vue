@@ -17,7 +17,7 @@
                 class="video"
                 controls>
                 <source
-                    :src="`/climbing/${video.path}.mp4`"
+                    :src="`/climbing/${video.path}.mp4#t=0.001`"
                     type="video/mp4" />
                 Your browser does not support videos.
             </video>
