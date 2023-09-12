@@ -1,10 +1,11 @@
 <template>
     <div class="me">
         <div class="card">
-            <img
+            <NuxtImg
                 class="headshot"
                 src="/headshot1.png"
-                alt="Picture of me" />
+                alt="Picture of me"
+                preload />
         </div>
         <div class="text">
             <div class="welcome">Hey, it's Zack.</div>
@@ -21,6 +22,7 @@
 
 <script setup lang="ts">
 import { Download } from 'lucide-vue-next'
+
 const colorMode = useColorMode()
 const isDarkMode = computed(() => colorMode.preference === 'dark')
 const boxShadow = computed(

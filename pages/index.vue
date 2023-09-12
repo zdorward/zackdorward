@@ -23,25 +23,10 @@ const options = computed(() => ({
             },
         },
         color: {
-            value: colorMode.preference === 'dark' ? '#ffffff' : '#000000',
-        },
-        shape: {
-            type: 'circle',
-            stroke: {
-                width: 0,
-                color: '#000000',
-            },
-            polygon: {
-                nb_sides: 5,
-            },
-            image: {
-                src: 'img/github.svg',
-                width: 100,
-                height: 100,
-            },
+            value: colorMode.preference === 'light' ? '#000000' : '#ffffff',
         },
         opacity: {
-            value: 0.48927153781200905,
+            value: 0.5,
             random: false,
             anim: {
                 enable: true,

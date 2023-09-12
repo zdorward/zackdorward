@@ -13,6 +13,7 @@
         "nuxt-particles": "^0.1.5"
     },
     "dependencies": {
+        "@nuxt/image": "^1.0.0-rc.1",
         "lucide-vue-next": "^0.268.0",
         "sass": "^1.65.1"
     }
