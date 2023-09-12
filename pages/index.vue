@@ -2,6 +2,7 @@
     <div class="index">
         <!-- @vue-ignore -->
         <NuxtParticles
+            :key="colorMode.preference"
             id="particles"
             :options="options"></NuxtParticles>
         <NavBar :selected-page="'/'"></NavBar>
@@ -10,7 +11,9 @@
 </template>
 
 <script setup lang="ts">
-const options = {
+const colorMode = useColorMode()
+
+const options = computed(() => ({
     particles: {
         number: {
             value: 500,
@@ -20,7 +23,7 @@ const options = {
             },
         },
         color: {
-            value: '#ffffff',
+            value: colorMode.preference === 'dark' ? '#ffffff' : '#000000',
         },
         shape: {
             type: 'circle',
@@ -116,7 +119,7 @@ const options = {
         },
     },
     retina_detect: true,
-}
+}))
 </script>
 <style scoped lang="scss">
 .index {
