@@ -14,23 +14,16 @@
                 :size="32">
             </Moon>
         </div>
-        <div class="options-container">
-            <div class="options">
-                <div
-                    v-for="page in pages"
+        <div class="options">
+            <div v-for="page in pages">
+                <NuxtLink
                     :class="{
                         option: true,
                         active: page.value === selectedPage,
-                    }">
-                    <NuxtLink
-                        :style="{
-                            textDecoration: 'none',
-                            color: 'inherit',
-                        }"
-                        :to="page.value">
-                        {{ page.label }}
-                    </NuxtLink>
-                </div>
+                    }"
+                    :to="page.value">
+                    {{ page.label }}
+                </NuxtLink>
             </div>
         </div>
         <div class="socials">
@@ -80,10 +73,6 @@ const setisDarkMode = (dark: boolean) => {
     }
 }
 
-const updatePage = (page: string) => {
-    emit('updatePage', page)
-}
-
 watch(colorMode, (newColorMode) => {
     if (newColorMode.preference === 'system') {
         setisDarkMode(true)
@@ -117,30 +106,25 @@ watch(colorMode, (newColorMode) => {
             color: v-bind(iconColor);
         }
     }
-
-    .options-container {
+    .options {
         display: flex;
-        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+        text-transform: uppercase;
 
-        .options {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 4rem;
-            text-transform: uppercase;
+        .option {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            padding: 0.5rem 0;
 
-            .option {
-                cursor: pointer;
-                color: inherit;
-                padding: 0.5rem 0;
-
-                &:hover {
-                    font-weight: bold;
-                }
-                &.active {
-                    font-weight: bold;
-                    color: var(main.$accent);
-                }
+            &:hover {
+                font-weight: bold;
+            }
+            &.active {
+                font-weight: bold;
+                color: var(main.$accent);
             }
         }
     }
@@ -157,6 +141,19 @@ watch(colorMode, (newColorMode) => {
             &:hover {
                 color: var(main.$accent);
             }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        justify-content: center;
+        .color-mode {
+            display: none;
+        }
+
+        .socials {
+            display: none;
         }
     }
 }

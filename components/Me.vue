@@ -40,6 +40,8 @@ const boxShadow = computed(
     align-items: center;
 
     .card {
+        display: flex;
+        justify-content: center;
         background: linear-gradient(
             -45deg,
             #7c43ed,
@@ -84,6 +86,14 @@ const boxShadow = computed(
             &:hover {
                 color: var(main.$accent);
             }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .me {
+        .card {
+            width: 50%;
         }
     }
 }
