@@ -66,14 +66,19 @@ const videos: Video[] = [
 
     .videos {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
-        justify-content: space-around;
+
         .video {
             width: 300px;
             border: solid black 2px;
             border-radius: 1rem;
             margin: 3rem 2rem;
         }
+    }
+    .videos::after {
+        content: '';
+        flex: auto;
     }
 }
 </style>
