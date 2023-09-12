@@ -32,7 +32,7 @@ const boxShadow = computed(
 @use '/assets/main';
 
 .me {
-    height: calc(100vh - main.$h-nav);
+    height: calc(100svh - main.$h-nav);
     margin-top: main.$h-nav;
     display: flex;
     flex-direction: column;
