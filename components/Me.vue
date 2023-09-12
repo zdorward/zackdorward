@@ -57,6 +57,7 @@ const boxShadow = computed(
         padding-bottom: 0;
         border-radius: 3rem;
         overflow: hidden;
+        z-index: 5;
         .headshot {
             display: flex;
             width: 300px;
@@ -86,6 +87,7 @@ const boxShadow = computed(
             &:hover {
                 color: var(main.$accent);
             }
+            z-index: 5;
         }
     }
 }

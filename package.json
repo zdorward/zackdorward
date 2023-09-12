@@ -9,7 +9,8 @@
     },
     "devDependencies": {
         "@nuxtjs/color-mode": "^3.3.0",
-        "nuxt": "^3.0.0"
+        "nuxt": "^3.0.0",
+        "nuxt-particles": "^0.1.5"
     },
     "dependencies": {
         "lucide-vue-next": "^0.268.0",
