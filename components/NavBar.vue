@@ -52,7 +52,6 @@ const emit = defineEmits<{
 }>()
 
 const colorMode = useColorMode()
-colorMode.preference = 'dark'
 const isDarkMode = computed(() => colorMode.preference === 'dark')
 const iconColor = computed(() => (isDarkMode.value ? '#f9d71c' : '#909090'))
 
@@ -73,11 +72,15 @@ const setisDarkMode = (dark: boolean) => {
     }
 }
 
-watch(colorMode, (newColorMode) => {
-    if (newColorMode.preference === 'system') {
-        setisDarkMode(true)
-    }
-})
+watch(
+    colorMode,
+    (newColorMode) => {
+        if (newColorMode.preference === 'system') {
+            setisDarkMode(true)
+        }
+    },
+    { immediate: true }
+)
 </script>
 
 <style scoped lang="scss">
