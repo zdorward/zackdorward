@@ -5,7 +5,8 @@
                 class="headshot"
                 src="/headshot1.png"
                 alt="Picture of me"
-                preload />
+                preload
+                placeholder />
         </div>
         <div class="text">
             <div class="welcome">Hey, it's Zack.</div>
