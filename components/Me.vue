@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import { Download, Github, Linkedin } from 'lucide-vue-next'
+import { Download } from 'lucide-vue-next'
 const colorMode = useColorMode()
 const isDarkMode = computed(() => colorMode.preference === 'dark')
 const boxShadow = computed(

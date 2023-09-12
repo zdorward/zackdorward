@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/color-mode', 'nuxt-particles', '@pinia/nuxt'],
+    modules: ['@nuxtjs/color-mode', 'nuxt-particles'],
     nitro: {
         preset: 'vercel-edge',
     },

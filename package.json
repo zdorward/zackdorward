@@ -9,11 +9,10 @@
     },
     "devDependencies": {
         "@nuxtjs/color-mode": "^3.3.0",
-        "nuxt": "^3.0.0",
+        "nuxt": "^3.1.0",
         "nuxt-particles": "^0.1.5"
     },
     "dependencies": {
-        "@pinia/nuxt": "^0.4.11",
         "lucide-vue-next": "^0.268.0",
         "sass": "^1.65.1"
     }

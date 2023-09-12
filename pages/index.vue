@@ -10,14 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import type { Container } from 'tsparticles-engine'
-
-// const onLoad = (container: Container) => {
-//     // Do something with the container
-//     container.pause()
-//     setTimeout(() => container.play(), 100)
-// }
-
 const options = {
     particles: {
         number: {
