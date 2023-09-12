@@ -10,7 +10,7 @@
             <div class="welcome">Hey, it's Zack.</div>
             <a
                 class="resume"
-                href="/Zack Dorward_resume.pdf"
+                href="/Zack_Dorward_resume.pdf"
                 download>
                 <Download :size="18"></Download>
                 RESUME
