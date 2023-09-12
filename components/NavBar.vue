@@ -3,13 +3,13 @@
         <div>
             <Sun
                 v-if="isDarkMode"
-                class="icon"
+                class="color-mode"
                 @click="setisDarkMode(!isDarkMode)"
                 :size="32">
             </Sun>
             <Moon
                 v-else
-                class="icon"
+                class="color-mode"
                 @click="setisDarkMode(!isDarkMode)"
                 :size="32">
             </Moon>
@@ -21,18 +21,35 @@
                     :class="{
                         option: true,
                         active: page.value === selectedPage,
-                    }"
-                    style="text-decoration: none"
-                    @click="updatePage(page.value)">
-                    {{ page.label }}
+                    }">
+                    <NuxtLink
+                        :style="{
+                            textDecoration: 'none',
+                            color: 'inherit',
+                        }"
+                        :to="page.value">
+                        {{ page.label }}
+                    </NuxtLink>
                 </div>
             </div>
+        </div>
+        <div class="socials">
+            <a
+                target="_blank"
+                href="https://github.com/zdorward">
+                <Github></Github>
+            </a>
+            <a
+                target="_blank"
+                href="https://www.linkedin.com/in/zack-dorward/">
+                <Linkedin></Linkedin>
+            </a>
         </div>
     </nav>
 </template>
 
 <script setup lang="ts">
-import { Sun, Moon } from 'lucide-vue-next'
+import { Sun, Moon, Github, Linkedin } from 'lucide-vue-next'
 
 defineProps<{
     selectedPage: string
@@ -51,8 +68,8 @@ type Page = {
     value: string
 }
 const pages: Page[] = [
-    { value: 'home', label: 'Home' },
-    { value: 'bouldering', label: 'Bouldering' },
+    { value: '/', label: 'Home' },
+    { value: '/bouldering', label: 'Bouldering' },
 ]
 
 const setisDarkMode = (dark: boolean) => {
@@ -79,21 +96,21 @@ watch(colorMode, (newColorMode) => {
 
 .nav-bar {
     background-color: var(main.$secondary-bg);
-    padding: 1rem;
+    padding: 1rem 0;
     position: fixed;
     top: 0;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 100%;
-    overflow: hidden;
     border-bottom: solid var(main.$primary-light);
     z-index: 10;
 
-    .icon {
+    .color-mode {
+        padding-left: 2rem;
         cursor: pointer;
         transition: transform 0.1s;
-        display: block;
-        padding-left: 1rem;
+        display: flex;
 
         &:hover {
             transform: scale(1.25);
@@ -102,7 +119,6 @@ watch(colorMode, (newColorMode) => {
     }
 
     .options-container {
-        width: 100%;
         display: flex;
         justify-content: center;
 
@@ -125,6 +141,21 @@ watch(colorMode, (newColorMode) => {
                     font-weight: bold;
                     color: var(main.$accent);
                 }
+            }
+        }
+    }
+
+    .socials {
+        padding-right: 2rem;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            &:hover {
+                color: var(main.$accent);
             }
         }
     }
