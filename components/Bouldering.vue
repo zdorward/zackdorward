@@ -65,20 +65,17 @@ const videos: Video[] = [
     }
 
     .videos {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10rem 8rem; // Adjust the gap as needed, first value for row gap, second for column gap
+        margin: 0 auto; // This centers the grid within its container if needed
 
         .video {
-            width: 300px;
+            width: 100%; // Makes the video fill the cell, adjust if necessary
             border: solid black 2px;
             border-radius: 1rem;
-            margin: 3rem 2rem;
+            // Removed margin as gap takes care of spacing
         }
-    }
-    .videos::after {
-        content: '';
-        flex: auto;
     }
 }
 </style>
