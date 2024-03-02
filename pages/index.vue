@@ -5,8 +5,8 @@
             :key="colorMode.preference"
             id="particles"
             :options="options"></NuxtParticles>
-        <NavBar :selected-page="'/'"></NavBar>
         <ClientOnly>
+            <NavBar :selected-page="'/'"></NavBar>
             <Me></Me>
         </ClientOnly>
     </div>
