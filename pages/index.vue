@@ -6,7 +6,9 @@
             id="particles"
             :options="options"></NuxtParticles>
         <NavBar :selected-page="'/'"></NavBar>
-        <Me></Me>
+        <ClientOnly>
+            <Me></Me>
+        </ClientOnly>
     </div>
 </template>
 
