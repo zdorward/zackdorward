@@ -61,7 +61,7 @@ type Page = {
 }
 const pages: Page[] = [
     { value: '/', label: 'Home' },
-    { value: '/bouldering', label: 'Bouldering' },
+    // { value: '/bouldering', label: 'Bouldering' },
 ]
 
 const setisDarkMode = (dark: boolean) => {
