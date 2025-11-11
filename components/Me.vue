@@ -10,19 +10,20 @@
         </div>
         <div class="text">
             <div class="welcome">Hey, it's Zack.</div>
-            <a
+            <!-- <a
                 class="resume"
                 href="/Zack_Dorward_resume.pdf"
                 download>
                 <Download :size="18"></Download>
                 RESUME
-            </a>
+            </a> -->
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
 import { Download } from 'lucide-vue-next'
+import { computed } from 'vue'
 
 const colorMode = useColorMode()
 const isDarkMode = computed(() => colorMode.preference === 'dark')
