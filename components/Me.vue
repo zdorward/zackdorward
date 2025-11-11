@@ -3,7 +3,7 @@
         <div class="card">
             <NuxtImg
                 class="headshot"
-                src="/headshot1.png"
+                src="/headshot.png"
                 alt="Picture of me"
                 preload
                 placeholder />
